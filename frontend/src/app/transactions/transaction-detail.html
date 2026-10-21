@@ -1,0 +1,30 @@
+<div class="backdrop" (click)="close()"></div>
+<aside class="dialog" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+  <button class="close" (click)="close()" aria-label="Close">✕</button>
+  <h2 id="detail-title">{{ detail().transaction.sourceSystem }} · #{{ detail().transaction.transactionId }}</h2>
+  <p>
+    <span class="badge {{ detail().transaction.status.toLowerCase() }}">{{ detail().transaction.status }}</span>
+    revision {{ detail().transaction.revision }}
+  </p>
+  <dl>
+    <dt>Product</dt><dd>{{ detail().transaction.productName }}</dd>
+    <dt>Amount</dt><dd>{{ detail().transaction.amount | number: '1.2-2' }}</dd>
+    <dt>Card</dt><dd>{{ detail().transaction.cardNumber || '—' }}</dd>
+    <dt>Location</dt><dd>{{ detail().transaction.locationCode }}</dd>
+    <dt>Transaction time</dt><dd>{{ detail().transaction.transactionTime | utcDate }}</dd>
+    <dt>First imported</dt><dd>{{ detail().transaction.firstImportedAt | utcDate }}</dd>
+    <dt>Last updated</dt><dd>{{ detail().transaction.lastUpdatedAt | utcDate }}</dd>
+  </dl>
+  <h3>Audit history</h3>
+  <ol class="audit">
+    @for (entry of detail().audit; track entry.id) {
+      <li>
+        <strong>{{ entry.changeType }}</strong>
+        @if (entry.fieldName) {
+          · {{ entry.fieldName }}: <code>{{ entry.oldValue ?? '∅' }}</code> → <code>{{ entry.newValue ?? '∅' }}</code>
+        }
+        <small>batch #{{ entry.importBatchId }} · rev {{ entry.revision }} · {{ entry.occurredAt | utcDate }}</small>
+      </li>
+    }
+  </ol>
+</aside>

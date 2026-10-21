@@ -1,0 +1,20 @@
+{
+  "Store Uptown": [
+    {"sourceSystem": "Store Uptown", "transactionId": 100001, "cardNumber": "***1111", "locationCode": "UPTOWN", "productName": "Wireless Mouse", "amount": 24.99, "transactionTime": "now-2h"},
+    {"sourceSystem": "Store Uptown", "transactionId": 100002, "cardNumber": "***3333", "locationCode": "UPTOWN", "productName": "USB Cable", "amount": 11.49, "transactionTime": "now-5h"},
+    {"sourceSystem": "Store Uptown", "transactionId": 100003, "cardNumber": "***2222", "locationCode": "UPTOWN", "productName": "Headset", "amount": 59.0, "transactionTime": "now-10h"}
+  ],
+  "Store Downtown": [
+    {"sourceSystem": "Store Downtown", "transactionId": 100001, "cardNumber": "***0002", "locationCode": "DOWNTOWN", "productName": "Mechanical Keyboard", "amount": 89.99, "transactionTime": "now-3h"},
+    {"sourceSystem": "Store Downtown", "transactionId": 100003, "cardNumber": "***0005", "locationCode": "DOWNTOWN", "productName": "Mouse", "amount": 45.5, "transactionTime": "now-8h"},
+    {"sourceSystem": "Store Downtown", "transactionId": 100004, "cardNumber": "***0006", "locationCode": "DOWNTOWN", "productName": "Wireless Keyboard", "amount": 45.5, "transactionTime": "now-8h"},
+    {"sourceSystem": "Store Downtown", "transactionId": 100005, "cardNumber": "***0004", "locationCode": "DOWNTOWN", "productName": "", "amount": 45.5, "transactionTime": "now-9h"}
+  ],
+  "Online": [
+    {"sourceSystem": "Online", "transactionId": 100001, "cardNumber": "***4444", "locationCode": "ONLINE", "productName": "USB-C Docking Station", "amount": 129.95, "transactionTime": "now-1h"},
+    {"sourceSystem": "Online", "transactionId": 100002, "cardNumber": "***5555", "locationCode": "ONLINE", "productName": "Webcam", "amount": 54.0, "transactionTime": "now-6h"},
+    {"sourceSystem": "Online", "transactionId": 100003, "cardNumber": "", "locationCode": "ONLINE", "productName": "SSD 1TB", "amount": 79.0, "transactionTime": "now-20h"},
+    {"sourceSystem": "Online", "transactionId": 100004, "cardNumber": "***4444", "locationCode": "ONLINE", "productName": "Laptop Bag", "amount": 39.9, "transactionTime": "now-30h"},
+    {"sourceSystem": "Online", "transactionId": 100005, "cardNumber": "***6666", "locationCode": "ONLINE", "productName": "Wireless Charger", "amount": 19.99, "transactionTime": "now-0.5h"}
+  ]
+}

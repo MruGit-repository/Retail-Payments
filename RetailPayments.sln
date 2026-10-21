@@ -1,0 +1,101 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.11.12306.390 stable
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetailPayments.Api", "src\RetailPayments.Api\RetailPayments.Api.csproj", "{1EEFB81C-F210-4EDE-AA0D-377C9F7E864C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0AB3BF05-4346-4AA6-1389-037BE0695223}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetailPayments.Tests", "tests\RetailPayments.Tests\RetailPayments.Tests.csproj", "{7E758744-2100-49CE-A713-8B844245B8E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontend", "frontend", "{5B1D1F0E-6C1A-4E57-9E0D-2F3A7C9B4A11}"
+	ProjectSection(SolutionItems) = preProject
+		frontend\package.json = frontend\package.json
+		frontend\angular.json = frontend\angular.json
+		frontend\proxy.conf.json = frontend\proxy.conf.json
+		frontend\tsconfig.json = frontend\tsconfig.json
+		frontend\src\index.html = frontend\src\index.html
+		frontend\src\main.ts = frontend\src\main.ts
+		frontend\src\styles.css = frontend\src\styles.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{8C2E3A47-1D5B-4F6C-A9E2-7B4D6F1C8E22}"
+	ProjectSection(SolutionItems) = preProject
+		frontend\src\app\app.ts = frontend\src\app\app.ts
+		frontend\src\app\app.html = frontend\src\app\app.html
+		frontend\src\app\app.css = frontend\src\app\app.css
+		frontend\src\app\app.config.ts = frontend\src\app\app.config.ts
+		frontend\src\app\app.spec.ts = frontend\src\app\app.spec.ts
+		frontend\src\app\api.ts = frontend\src\app\api.ts
+		frontend\src\app\transactions\transaction-grid.ts = frontend\src\app\transactions\transaction-grid.ts
+		frontend\src\app\transactions\transaction-grid.html = frontend\src\app\transactions\transaction-grid.html
+		frontend\src\app\transactions\transaction-grid.css = frontend\src\app\transactions\transaction-grid.css
+		frontend\src\app\transactions\transaction-detail.ts = frontend\src\app\transactions\transaction-detail.ts
+		frontend\src\app\transactions\transaction-detail.html = frontend\src\app\transactions\transaction-detail.html
+		frontend\src\app\transactions\transaction-detail.css = frontend\src\app\transactions\transaction-detail.css
+		frontend\src\app\transactions\transaction-detail.spec.ts = frontend\src\app\transactions\transaction-detail.spec.ts
+		frontend\src\app\imports\rejections-panel.ts = frontend\src\app\imports\rejections-panel.ts
+		frontend\src\app\imports\rejections-panel.html = frontend\src\app\imports\rejections-panel.html
+		frontend\src\app\imports\rejections-panel.css = frontend\src\app\imports\rejections-panel.css
+		frontend\src\app\imports\recent-imports.ts = frontend\src\app\imports\recent-imports.ts
+		frontend\src\app\imports\recent-imports.html = frontend\src\app\imports\recent-imports.html
+		frontend\src\app\imports\recent-imports.css = frontend\src\app\imports\recent-imports.css
+		frontend\src\app\shared\utc-date.pipe.ts = frontend\src\app\shared\utc-date.pipe.ts
+		frontend\src\app\shared\utc-date.pipe.spec.ts = frontend\src\app\shared\utc-date.pipe.spec.ts
+		frontend\src\app\shared\error-message.ts = frontend\src\app\shared\error-message.ts
+	EndProjectSection
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EEFB81C-F210-4EDE-AA0D-377C9F7E864C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EEFB81C-F210-4EDE-AA0D-377C9F7E864C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EEFB81C-F210-4EDE-AA0D-377C9F7E864C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1EEFB81C-F210-4EDE-AA0D-377C9F7E864C}.Debug|x64.Build.0 = Debug|Any CPU
+		{1EEFB81C-F210-4EDE-AA0D-377C9F7E864C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1EEFB81C-F210-4EDE-AA0D-377C9F7E864C}.Debug|x86.Build.0 = Debug|Any CPU
+		{1EEFB81C-F210-4EDE-AA0D-377C9F7E864C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EEFB81C-F210-4EDE-AA0D-377C9F7E864C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EEFB81C-F210-4EDE-AA0D-377C9F7E864C}.Release|x64.ActiveCfg = Release|Any CPU
+		{1EEFB81C-F210-4EDE-AA0D-377C9F7E864C}.Release|x64.Build.0 = Release|Any CPU
+		{1EEFB81C-F210-4EDE-AA0D-377C9F7E864C}.Release|x86.ActiveCfg = Release|Any CPU
+		{1EEFB81C-F210-4EDE-AA0D-377C9F7E864C}.Release|x86.Build.0 = Release|Any CPU
+		{7E758744-2100-49CE-A713-8B844245B8E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E758744-2100-49CE-A713-8B844245B8E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E758744-2100-49CE-A713-8B844245B8E3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7E758744-2100-49CE-A713-8B844245B8E3}.Debug|x64.Build.0 = Debug|Any CPU
+		{7E758744-2100-49CE-A713-8B844245B8E3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7E758744-2100-49CE-A713-8B844245B8E3}.Debug|x86.Build.0 = Debug|Any CPU
+		{7E758744-2100-49CE-A713-8B844245B8E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E758744-2100-49CE-A713-8B844245B8E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E758744-2100-49CE-A713-8B844245B8E3}.Release|x64.ActiveCfg = Release|Any CPU
+		{7E758744-2100-49CE-A713-8B844245B8E3}.Release|x64.Build.0 = Release|Any CPU
+		{7E758744-2100-49CE-A713-8B844245B8E3}.Release|x86.ActiveCfg = Release|Any CPU
+		{7E758744-2100-49CE-A713-8B844245B8E3}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1EEFB81C-F210-4EDE-AA0D-377C9F7E864C} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{7E758744-2100-49CE-A713-8B844245B8E3} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
+		{8C2E3A47-1D5B-4F6C-A9E2-7B4D6F1C8E22} = {5B1D1F0E-6C1A-4E57-9E0D-2F3A7C9B4A11}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F4762172-796C-4BB9-8CDB-370871D2054D}
+	EndGlobalSection
+EndGlobal

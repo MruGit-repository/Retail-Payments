@@ -1,0 +1,33 @@
+<section>
+  <h3>Recent imports</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th><th>Started (UTC)</th><th>By</th><th>Status</th><th>+</th><th>~</th>
+        <th>Revoked</th><th>Restored</th><th>Finalized</th><th>Rejected</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (batch of batches(); track batch.id) {
+        <tr>
+          <td>{{ batch.id }}</td>
+          <td>{{ batch.startedAt | utcDate: 'MM-dd HH:mm:ss' }}</td>
+          <td>{{ batch.triggeredBy }}</td>
+          <td>{{ batch.status }}</td>
+          <td>{{ batch.created }}</td>
+          <td>{{ batch.updated }}</td>
+          <td>{{ batch.revoked }}</td>
+          <td>{{ batch.restored }}</td>
+          <td>{{ batch.finalized }}</td>
+          <td>
+            @if (batch.rejected) {
+              <a href="#" class="link" (click)="showRejections($event, batch.id)">{{ batch.rejected }}</a>
+            } @else {
+              0
+            }
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</section>

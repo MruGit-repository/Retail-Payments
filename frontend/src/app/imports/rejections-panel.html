@@ -1,0 +1,20 @@
+<section class="panel">
+  <h3>Rejected records, batch #{{ batchId() }}</h3>
+  <table>
+    <thead>
+      <tr><th>Source</th><th>Txn ID</th><th>Reason</th><th>Record as received</th></tr>
+    </thead>
+    <tbody>
+      @for (rejection of rejections(); track rejection.id) {
+        <tr>
+          <td>{{ rejection.sourceSystem }}</td>
+          <td class="num">{{ rejection.transactionId }}</td>
+          <td>{{ rejection.reason }}</td>
+          <td><code>{{ rejection.payload }}</code></td>
+        </tr>
+      } @empty {
+        <tr><td colspan="4" class="empty">No rejected records.</td></tr>
+      }
+    </tbody>
+  </table>
+</section>

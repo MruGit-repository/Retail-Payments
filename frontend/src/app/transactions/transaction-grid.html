@@ -1,0 +1,59 @@
+<section class="filters">
+  <input type="search" placeholder="Search product, location, card…" #searchBox
+         (input)="updateQuery({ search: searchBox.value })" [value]="query().search" />
+  <select #sourceFilter (change)="updateQuery({ sourceSystem: sourceFilter.value })" aria-label="Source system">
+    <option value="">All sources</option>
+    @for (source of sources; track source) { <option [value]="source">{{ source }}</option> }
+  </select>
+  <select #statusFilter (change)="updateQuery({ status: statusFilter.value })" aria-label="Status">
+    <option value="">All statuses</option>
+    @for (status of statuses; track status) { <option [value]="status">{{ status }}</option> }
+  </select>
+  <span class="count">{{ total() }} transactions</span>
+</section>
+
+<div class="table-wrap" [class.loading]="loading()">
+  <table>
+    <thead>
+      <tr>
+        @for (column of columns; track column.key) {
+          <th class="sortable" [class.num]="column.numeric" (click)="sort(column)" [attr.aria-sort]="ariaSort(column)">
+            {{ column.label }} <span class="indicator">{{ sortIndicator(column) }}</span>
+          </th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (t of rows(); track t.id) {
+        <tr (click)="rowSelected.emit(t)" [class.selected]="selectedId() === t.id">
+          <td>{{ t.sourceSystem }}</td>
+          <td class="num">{{ t.transactionId }}</td>
+          <td>{{ t.locationCode }}</td>
+          <td>{{ t.productName }}</td>
+          <td class="num">{{ t.amount | number: '1.2-2' }}</td>
+          <td>{{ t.transactionTime | utcDate }}</td>
+          <td><span class="badge {{ t.status.toLowerCase() }}">{{ t.status }}</span></td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="7" class="empty">
+            {{ loading() ? 'Loading…' : 'No transactions. Run an import to load data.' }}
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<nav class="pager">
+  <button (click)="goToPage(1)" [disabled]="query().page === 1">«</button>
+  <button (click)="goToPage(query().page - 1)" [disabled]="query().page === 1">‹</button>
+  <span>Page {{ query().page }} of {{ totalPages() }}</span>
+  <button (click)="goToPage(query().page + 1)" [disabled]="query().page >= totalPages()">›</button>
+  <button (click)="goToPage(totalPages())" [disabled]="query().page >= totalPages()">»</button>
+  <select #pageSizeSelect (change)="updateQuery({ pageSize: +pageSizeSelect.value })" aria-label="Page size">
+    @for (size of pageSizes; track size) {
+      <option [value]="size" [selected]="size === query().pageSize">{{ size }} / page</option>
+    }
+  </select>
+</nav>

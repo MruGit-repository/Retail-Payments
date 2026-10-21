@@ -1,0 +1,11 @@
+.panel {
+  margin: 12px 0;
+  padding: 8px 12px;
+  overflow-x: auto;
+  background: var(--danger-soft);
+  border: 1px solid var(--danger-border);
+  border-radius: 8px;
+}
+h3 { margin: 4px 0 8px; font-size: 1rem; }
+td { white-space: normal; word-break: break-word; }
+td.num { white-space: nowrap; word-break: normal; }

@@ -1,0 +1,14 @@
+bin/
+obj/
+.dotnet/
+.tools/
+*.db
+*.db-shm
+*.db-wal
+node_modules/
+frontend/dist/
+frontend/.angular/
+.vs/
+
+~$*
+logs/

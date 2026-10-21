@@ -1,0 +1,56 @@
+<header class="top">
+  <h1>Retail Payments · Transactions</h1>
+  <div class="actions">
+    @if (scenarioStep() !== null) {
+      <label class="scenario" title="Demo only: simulate the upstream systems changing between imports">
+        Mock source scenario
+        <select #scenarioSelect (change)="setScenario(scenarioSelect.value)">
+          @for (step of scenarioSteps(); track step) {
+            <option [value]="step" [selected]="step === scenarioStep()">Step {{ step }}</option>
+          }
+        </select>
+      </label>
+    }
+    <button class="primary" (click)="runImport()" [disabled]="importing()">
+      {{ importing() ? 'Importing…' : 'Run import now' }}
+    </button>
+  </div>
+</header>
+
+@if (error(); as message) {
+  <div class="banner error" role="alert">{{ message }}</div>
+}
+
+@if (lastImport(); as result) {
+  <div class="banner" [class.warn]="result.status !== 'Succeeded'">
+    Batch #{{ result.batchId }} <strong>{{ result.status }}</strong>:
+    {{ result.totals.created }} created · {{ result.totals.updated }} updated · {{ result.totals.revoked }} revoked ·
+    {{ result.totals.restored }} restored · {{ result.totals.finalized }} finalized · {{ result.totals.unchanged }} unchanged
+    @if (result.totals.rejected) {
+      · <a href="#" class="link" (click)="toggleRejections(result.batchId); $event.preventDefault()">{{ result.totals.rejected }} rejected</a>
+    }
+    @for (source of result.sources; track source.sourceSystem) {
+      @if (!source.succeeded) {
+        <div> {{ source.sourceSystem }}: {{ source.error }}</div>
+      }
+    }
+  </div>
+}
+
+@if (rejectionsBatch(); as batchId) {
+  <app-rejections-panel [batchId]="batchId" [rejections]="rejections()" />
+}
+
+<app-transaction-grid
+  [selectedId]="detail()?.transaction?.id ?? null"
+  (rowSelected)="openDetail($event)"
+  (loaded)="error.set(null)"
+  (failed)="error.set($event)" />
+
+@if (detail(); as current) {
+  <app-transaction-detail [detail]="current" (closed)="closeDetail()" />
+}
+
+@if (batches().length) {
+  <app-recent-imports [batches]="batches()" (rejectionsRequested)="toggleRejections($event)" />
+}

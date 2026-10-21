@@ -1,0 +1,12 @@
+:host { display: block; max-width: 1200px; margin: 0 auto; padding: 16px; }
+
+.top { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; }
+h1 { font-size: 1.4rem; margin: 0; }
+.actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.scenario { display: flex; gap: 6px; align-items: center; font-size: .85rem; color: var(--text-muted); }
+
+.banner { margin: 12px 0; padding: 10px 12px; border-radius: 6px; font-size: .9rem; background: var(--ok-bg); border: 1px solid var(--ok-border); }
+.banner.warn { background: var(--warn-bg); border-color: var(--warn-border); }
+.banner.error { background: var(--danger-bg); border-color: var(--danger-border); }
+
+@media (max-width: 600px) { :host { padding: 8px; } }
